@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+
+\input{1_header/packages.tex}
+
+\begin{document}
+
+% Suppress headers for the title, declaration, acknowledgements, etc.
+\pagestyle{plain} % Set plain page style with page numbers at the bottom
+
+\input{1_header/title.tex}
+\restoregeometry
+
+\pagenumbering{roman}
+
+\section*{Declaration}
+\input{1_header/declaration.tex}
+\pagebreak
+
+\section*{Acknowledgements}
+\input{1_header/acknowledgments.tex}
+\pagebreak
+
+\section*{Summary of Student's Achievements}
+\input{1_header/achievements.tex}
+\pagebreak
+
+\setcounter{tocdepth}{5}
+\tableofcontents
+\pagebreak
+
+\listoffigures
+\listoftables
+\pagebreak
+
+\setglossarystyle{long} %list, long, tree, alt list
+\setlength{\glsdescwidth}{0.55\linewidth} % Adjust description width to avoid wrapping
+\renewcommand{\glsnamefont}[1]{\textbf{#1}} % Bold the acronym/term
+\renewcommand*{\glspostdescription}{} % Removes period after descriptions
+
+\printglossary[type=\acronymtype]
+\setcounter{table}{0} % Reset table counter after the acronyms
+\pagebreak
+
+\justify
+
+\section*{Abstract}
+\input{1_header/abstract.tex}
+\pagebreak
+
+% Switch to fancy headers and arabic page numbering starting from the "Introduction"
+\pagestyle{fancy} % Enable fancy headers from Introduction onward
+\pagenumbering{arabic}
+
+% Configure fancyhdr for headers
+\fancyhf{} % Clear existing header/footer settings
+\fancyhead[R]{\thepage} % Move page number to the right side of the header
+\fancyhead[L]{\leftmark} % Left side of the header shows the section name
+\renewcommand{\headrulewidth}{0.1pt} % Adds a line below the header
+\renewcommand{\footrulewidth}{0pt} % No line in the footer
+
+\fancypagestyle{plain}{
+    \fancyhf{} % Clear default plain style
+    \fancyhead[R]{\thepage} % Page number on the right side of the header
+    \renewcommand{\headrulewidth}{0.1pt} % Keep header line, no section title
+}
+
+\section{Introduction}
+\thispagestyle{plain} % Use plain style for the first page of the Introduction section
+\input{1_header/introduction.tex}
+\glsresetall % Reset all acronyms to full form
+
+\addtocontents{toc}{\vspace{20pt}} % Adds 10pt space in TOC
+\newpage
+\section{Methods}
+\thispagestyle{plain} % Use plain style for the first page of the Methods section
+\input{2_body/methods.tex}
+
+\newpage
+\section{Results}
+\thispagestyle{plain} % Use plain style for the first page of the Results section
+\input{2_body/results.tex}
+\pagebreak
+
+\section{Discussion}
+\thispagestyle{plain} % Use plain style for the first page of the Discussion section
+\input{2_body/discussion.tex}
+\pagebreak
+
+\section{Conclusions}
+\thispagestyle{plain} % Use plain style for the first page of the Conclusions section
+\input{2_body/conclusions.tex}
+\pagebreak
+
+% #add references to toc
+\addcontentsline{toc}{section}{References}
+\thispagestyle{plain} % Use plain style for the first page of the References section
+
+\bibliographystyle{ieeetr} % or any other style you prefer
+\bibliography{3_footer/ref} % this should match the name of your .bib file without the .bib extension
+\pagebreak
+
+\section*{Appendices}
+\thispagestyle{plain} % Use plain style for the first page of the Appendices section
+\addcontentsline{toc}{section}{Appendices}
+\appendix
+\input{3_footer/appendices.tex}
+
+\end{document}

@@ -1,0 +1,107 @@
+\usepackage[utf8]{inputenc}
+%slippery gypsy packages that need to come first, since others call them after
+\usepackage[x11names,dvipsnames,svgnames,table]{xcolor}
+
+% general incantations
+\usepackage[export]{adjustbox}
+\usepackage{afterpage}
+
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{pdfpages}
+\usepackage{algorithm2e}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{calligra}
+\usepackage{caption}
+\usepackage{datetime}
+\usepackage{dblfnote}
+\usepackage{dirtytalk}
+\usepackage{dsfont}
+\usepackage{etex}
+\usepackage{fancyhdr}
+\usepackage{fix-cm}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp,gensymb} %for \degree C symbol
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{listings}
+\usepackage{transparent}
+\usepackage[everyline=true,framemethod=tikz]{mdframed}
+\usepackage{mparhack}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{parskip}
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{placeins}
+\usepackage[document]{ragged2e}
+\usepackage{rotating}
+\usepackage{setspace}
+\usepackage{subcaption}
+\usepackage{threeparttable}
+\usepackage[normalem]{ulem}
+\usepackage{verbatim}
+\usepackage{soul} %highlighting, strike through etc.
+
+%Automated appendices
+\usepackage[titletoc,title,header]{appendix} %advanced functionality
+
+%language settings
+\usepackage[utf8]{inputenc}
+\usepackage[australian]{babel}
+\usepackage{csquotes}
+
+%page setup
+%this where we adjust the binding offset, if relevant
+% \usepackage[a4paper]{geometry}
+\usepackage{lastpage} % for page 1 of n footers
+
+%cross referencing
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{cleveref}
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=black,        % color of internal links
+	citecolor=black,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue         
+}
+
+%maths stuff
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\setcounter{secnumdepth}{5}
+
+%lists
+\usepackage{enumitem}
+
+%working collaboratively
+\usepackage[backgroundcolor=yellow]{todonotes}
+
+%reference list
+\usepackage{cite} % takes care of citations
+
+%glossary for acronyms (put into overleaf to get this to show)
+\usepackage[acronym,nonumberlist,section=section]{glossaries} 
+\makeglossaries
+\input{1_header/glossary}
+
+%line spacing
+\linespread{1.25}
+
+%my added stuff
+
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{longtable}
+
+\newcommand{\sci}[2]{#1\times10^{#2}}
+\newcommand{\uni}[1]{\left[\mathrm{#1}\right]}
+\newcommand{\element}[2]{\textsuperscript{#2}#1}
+\newcommand{\unif}[1]{\mathrm{\,{#1}}}
+\def\code#1{\texttt{#1}}
+
